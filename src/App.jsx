@@ -55,7 +55,7 @@ export default function App() {
               />
             </>
           ) : (
-            <h2>Your score: {score} / {questions.length}</h2>
+            <h2>Your score: {score} / {question.length}</h2>
           )
         ) : null
       }

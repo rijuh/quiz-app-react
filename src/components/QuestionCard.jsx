@@ -10,11 +10,11 @@ export default function QuestionCard({ questionData, onNext, onCorrect }) {
 
   useEffect(() => {
     setShuffledOptions(shuffleOptions(questionData.options));
-    setSelected(null); // Reset selection on new question
+    setSelected(null);
   }, [questionData]);
 
   const handleClick = (option) => {
-    if (selected) return; // Prevent multiple selections
+    if (selected) return;
     setSelected(option);
     if (option === questionData.answer) {
       onCorrect();
