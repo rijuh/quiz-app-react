@@ -17,6 +17,9 @@ export default function App() {
   const topics = ['Select Topic', ...Object.keys(questions)];
 
   const question = topic ? questions[topic] : [];
+
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8001";
+
   useEffect(() => {
     if (topic !== "Select Topic" && questions[topic]) {
       setTotal(questions[topic].length);
@@ -40,7 +43,7 @@ export default function App() {
   };
 
   const saveResult = () => {
-    axios.post("http://localhost:8001/api/results/insert", {
+    axios.post(`${API_URL}/api/results/insert`, {
       name: name,
       topic: topic,
       marks_obtained: score,
