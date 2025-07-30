@@ -8,6 +8,7 @@ const resultSchema = new Schema(
         marks_obtained: { type: Number, required: true, unique: false },
         marks_total: { type: Number, required: true, unique: false }
     },
+    { timestamps: true },
     { database: 'quizapp' },
     { collection: 'result' }
 );

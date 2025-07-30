@@ -4,7 +4,8 @@ require('dotenv').config();
 
 const connectToMongo = require('./db');
 
-const resultRoute = require('./routes/resultRoute')
+const resultRoute = require('./routes/resultRoute');
+const uptimeRobotRoute = require('./routes/uptimeRobotRoute');
 
 const app = express();
 
@@ -18,7 +19,9 @@ app.use(express.json());
 
 // ALL ROUTES
 app.use('/api/results', resultRoute);
+app.use('/api/uptimerobot', uptimeRobotRoute);
 
+// SERVER CODE
 const startServer = async () => {
     try {
         // CHECKING MONGO DB CONNECTION
