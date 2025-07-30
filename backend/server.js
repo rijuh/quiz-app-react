@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 // ALL ROUTES
-app.use('/api/results',resultRoute);
+app.use('/api/results', resultRoute);
 
 const startServer = async () => {
     try {
@@ -25,7 +25,8 @@ const startServer = async () => {
         await connectToMongo();
 
         app.listen(PORT, () => {
-            console.log(`Server is running on http://localhost:${PORT}`);
+            const host = process.env.RENDER_EXTERNAL_HOSTNAME || `localhost:${PORT}`;
+            console.log(`✅ Server is running on https://${host}`);
         })
     } catch (error) {
         console.error("❌ Server not started");

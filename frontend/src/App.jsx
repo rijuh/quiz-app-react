@@ -18,7 +18,10 @@ export default function App() {
 
   const question = topic ? questions[topic] : [];
 
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:8001";
+  const API_URL = import.meta.env.VITE_API_URL || // IF ENV VAR IS AVAIABLE
+    (window.location.hostname === "localhost"
+      ? "http://localhost:8001" // LOCALHOST
+      : "https://quiz-app-react-backend.onrender.com"); // DEPLOYED ON RENDER
 
   useEffect(() => {
     if (topic !== "Select Topic" && questions[topic]) {
