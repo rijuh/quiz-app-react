@@ -4,7 +4,6 @@ require('dotenv').config();
 
 const connectToMongo = require('./db');
 
-const resultRoute = require('./routes/resultRoute');
 const uptimeRobotRoute = require('./routes/uptimeRobotRoute');
 
 const app = express();
@@ -18,7 +17,12 @@ app.use(cors());
 app.use(express.json());
 
 // ALL ROUTES
-app.use('/api/results', resultRoute);
+try {
+    const resultRoute = require('./routes/resultRoute');
+    app.use('/api/results', resultRoute);
+} catch (error) {
+    console.log("Route error", error);
+}
 app.use('/api/uptimerobot', uptimeRobotRoute);
 
 // SERVER CODE

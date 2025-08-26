@@ -4,3 +4,5 @@ const router = express.Router();
 const uptimeRobotController = require('../controller/uptimeRobotController');
 
 router.get('/test', uptimeRobotController);
+
+module.exports = router;
