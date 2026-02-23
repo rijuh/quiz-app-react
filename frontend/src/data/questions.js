@@ -24,6 +24,10 @@ import { Arrays } from "./Arrays/Arrays";
 import { ArrayMethods } from "./Arrays/ArrayMethods";
 import { LoopingThroughArray } from "./Arrays/LoopingThroughArray"
 
+import { GeographyMCQ } from "../RRB/Part1";
+
+
+
 export const questions = {
     Variable: VariableQus,
     Datatype: Datatypes,
@@ -47,5 +51,7 @@ export const questions = {
 
     Arrays: Arrays,
     ArrayMethods: ArrayMethods,
-    LoopingThroughArray: LoopingThroughArray
+    LoopingThroughArray: LoopingThroughArray,
+
+    GeographyMCQ: GeographyMCQ
 };
